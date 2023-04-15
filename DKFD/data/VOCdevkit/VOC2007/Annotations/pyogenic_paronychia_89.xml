@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages_SR</folder>
+	<filename>pyogenic_paronychia_89.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\data\VOCdevkit\VOC2007\JPEGImages_SR\pyogenic_paronychia_89.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>531</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pyogenic paronychia</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>55</xmin>
+			<ymin>7</ymin>
+			<xmax>516</xmax>
+			<ymax>511</ymax>
+		</bndbox>
+	</object>
+</annotation>

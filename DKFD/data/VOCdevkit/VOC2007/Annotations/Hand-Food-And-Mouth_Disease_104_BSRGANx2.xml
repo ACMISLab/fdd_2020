@@ -1,0 +1,50 @@
+<annotation>
+	<folder>JPEGImages_SR</folder>
+	<filename>Hand-Food-And-Mouth_Disease_104_BSRGANx2.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\data\VOCdevkit\VOC2007\JPEGImages_SR\Hand-Food-And-Mouth_Disease_104_BSRGANx2.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>588</width>
+		<height>444</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Hand-Food-And-Mouth Disease</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>220</xmin>
+			<ymin>4</ymin>
+			<xmax>398</xmax>
+			<ymax>186</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Hand-Food-And-Mouth Disease</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>89</xmin>
+			<ymin>142</ymin>
+			<xmax>417</xmax>
+			<ymax>440</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Hand-Food-And-Mouth Disease</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>90</xmin>
+			<ymin>9</ymin>
+			<xmax>134</xmax>
+			<ymax>69</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>222</folder>
+	<filename>Diaper_dermatitis_17_rotate3.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\222\Diaper_dermatitis_17_rotate3.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>481</width>
+		<height>549</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Diaper dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>95</xmin>
+			<ymin>183</ymin>
+			<xmax>382</xmax>
+			<ymax>439</ymax>
+		</bndbox>
+	</object>
+</annotation>

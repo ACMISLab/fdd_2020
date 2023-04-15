@@ -1,0 +1,38 @@
+<annotation>
+	<folder>JPEGImages_SR</folder>
+	<filename>Atopic_dermatitis_7_BSRGAN.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\data\VOCdevkit\VOC2007\JPEGImages_SR\Atopic_dermatitis_7_BSRGAN.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>480</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Atopic dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>65</xmin>
+			<ymin>324</ymin>
+			<xmax>317</xmax>
+			<ymax>532</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Atopic dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>69</xmin>
+			<ymin>122</ymin>
+			<xmax>366</xmax>
+			<ymax>291</ymax>
+		</bndbox>
+	</object>
+</annotation>

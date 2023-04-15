@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>furuncle_1.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\SR\mmdetection-add-BESRGAN\data\VOCdevkit\VOC2007\JPEGImages\furuncle_1.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>159</width>
+		<height>120</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>furuncle</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>32</xmin>
+			<ymin>20</ymin>
+			<xmax>100</xmax>
+			<ymax>76</ymax>
+		</bndbox>
+	</object>
+</annotation>

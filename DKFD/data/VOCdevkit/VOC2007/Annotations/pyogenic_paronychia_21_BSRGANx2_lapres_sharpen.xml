@@ -1,0 +1,38 @@
+<?xml version="1.0" ?><annotation>
+	<folder>pyogenic_paronychia</folder>
+	<filename>pyogenic_paronychia_21.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\Images\pyogenic_paronychia\pyogenic_paronychia_21.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>588</width>
+		<height>444</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pyogenic paronychia</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>218</xmin>
+			<ymin>66</ymin>
+			<xmax>554</xmax>
+			<ymax>442</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>pyogenic paronychia</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>2</xmin>
+			<ymin>48</ymin>
+			<xmax>164</xmax>
+			<ymax>340</ymax>
+		</bndbox>
+	</object>
+</annotation>

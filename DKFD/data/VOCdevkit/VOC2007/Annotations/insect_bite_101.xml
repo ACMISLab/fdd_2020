@@ -1,0 +1,50 @@
+<annotation>
+	<folder>insect_bite</folder>
+	<filename>insect_bite_101.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\Images\insect_bite\insect_bite_101.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>918</width>
+		<height>523</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>insect bite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>590</xmin>
+			<ymin>212</ymin>
+			<xmax>759</xmax>
+			<ymax>386</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>insect bite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>392</xmin>
+			<ymin>235</ymin>
+			<xmax>505</xmax>
+			<ymax>330</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>insect bite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>214</xmin>
+			<ymin>206</ymin>
+			<xmax>324</xmax>
+			<ymax>320</ymax>
+		</bndbox>
+	</object>
+</annotation>

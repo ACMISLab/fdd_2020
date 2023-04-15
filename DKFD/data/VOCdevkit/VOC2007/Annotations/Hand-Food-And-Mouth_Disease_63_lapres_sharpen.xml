@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Hand-Food-And-Mouth_Disease</folder>
+	<filename>Hand-Food-And-Mouth_Disease_63.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\Images\Hand-Food-And-Mouth_Disease\Hand-Food-And-Mouth_Disease_63.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>294</width>
+		<height>222</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Hand-Food-And-Mouth Disease</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>8</xmin>
+			<ymin>2</ymin>
+			<xmax>279</xmax>
+			<ymax>217</ymax>
+		</bndbox>
+	</object>
+</annotation>

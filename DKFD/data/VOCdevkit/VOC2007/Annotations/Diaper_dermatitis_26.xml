@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages_SR</folder>
+	<filename>Diaper_dermatitis_26.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\data\VOCdevkit\VOC2007\JPEGImages_SR\Diaper_dermatitis_26.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1024</width>
+		<height>1024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Diaper dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>57</xmin>
+			<ymin>186</ymin>
+			<xmax>995</xmax>
+			<ymax>952</ymax>
+		</bndbox>
+	</object>
+</annotation>

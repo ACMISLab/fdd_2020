@@ -1,0 +1,38 @@
+<annotation>
+	<folder>atopic_dermatitis</folder>
+	<filename>Atopic_dermatitis_79 .jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\Images\atopic_dermatitis\Atopic_dermatitis_79 .jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>361</width>
+		<height>240</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Atopic dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>139</xmin>
+			<ymin>153</ymin>
+			<xmax>161</xmax>
+			<ymax>180</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Atopic dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>198</xmin>
+			<ymin>150</ymin>
+			<xmax>221</xmax>
+			<ymax>186</ymax>
+		</bndbox>
+	</object>
+</annotation>

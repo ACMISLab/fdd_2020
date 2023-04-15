@@ -1,0 +1,26 @@
+<annotation>
+	<folder>pyogenic_paronychia</folder>
+	<filename>pyogenic_paronychia_25.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\Images\pyogenic_paronychia\pyogenic_paronychia_25.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>294</width>
+		<height>222</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>pyogenic paronychia</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>63</xmin>
+			<ymin>31</ymin>
+			<xmax>190</xmax>
+			<ymax>170</ymax>
+		</bndbox>
+	</object>
+</annotation>

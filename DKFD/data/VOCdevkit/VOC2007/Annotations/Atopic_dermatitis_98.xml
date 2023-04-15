@@ -1,0 +1,38 @@
+<annotation>
+	<folder>JPEGImages_org</folder>
+	<filename>Atopic_dermatitis_98.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\model\mmdetection-master-BESR\data\VOCdevkit\VOC2007\JPEGImages_org\Atopic_dermatitis_98.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>300</width>
+		<height>225</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Atopic dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>23</xmin>
+			<ymin>31</ymin>
+			<xmax>104</xmax>
+			<ymax>130</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>Atopic dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>219</xmin>
+			<ymin>42</ymin>
+			<xmax>279</xmax>
+			<ymax>146</ymax>
+		</bndbox>
+	</object>
+</annotation>

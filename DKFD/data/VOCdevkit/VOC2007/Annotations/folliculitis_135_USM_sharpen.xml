@@ -1,0 +1,26 @@
+<annotation>
+	<folder>JPEGImages</folder>
+	<filename>folliculitis_135.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\model\mmdetection-master-BESR\mmdetection-master\data\VOCdevkit\VOC2007\JPEGImages\folliculitis_135.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>900</width>
+		<height>600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>folliculitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>388</xmin>
+			<ymin>248</ymin>
+			<xmax>483</xmax>
+			<ymax>336</ymax>
+		</bndbox>
+	</object>
+</annotation>

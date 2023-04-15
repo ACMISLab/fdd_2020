@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Atopic_dermatitis</folder>
+	<filename>Atopic_dermatitis_1_52.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\images\Atopic_dermatitis\Atopic_dermatitis_1_52.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>120</width>
+		<height>124</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Atopic dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>18</xmin>
+			<ymin>18</ymin>
+			<xmax>102</xmax>
+			<ymax>98</ymax>
+		</bndbox>
+	</object>
+</annotation>

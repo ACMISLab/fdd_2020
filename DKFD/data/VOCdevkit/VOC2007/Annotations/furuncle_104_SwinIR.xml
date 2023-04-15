@@ -1,0 +1,26 @@
+<?xml version="1.0" ?><annotation>
+	<folder>furuncle</folder>
+	<filename>furuncle_104.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\Images\furuncle\furuncle_104.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1036</width>
+		<height>776</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>furuncle</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>340</xmin>
+			<ymin>328</ymin>
+			<xmax>428</xmax>
+			<ymax>416</ymax>
+		</bndbox>
+	</object>
+</annotation>

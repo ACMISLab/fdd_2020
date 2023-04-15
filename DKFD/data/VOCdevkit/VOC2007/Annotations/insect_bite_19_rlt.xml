@@ -1,0 +1,26 @@
+<?xml version="1.0" ?><annotation>
+	<folder>insect_bite</folder>
+	<filename>insect_bite_106.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\model\images(2022.05.08)\insect_bite\insect_bite_106.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>insect bite</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>236</xmin>
+			<ymin>192</ymin>
+			<xmax>368</xmax>
+			<ymax>324</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Urticaria</folder>
+	<filename>Urticaria_94.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\Images\Urticaria\Urticaria_94.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>294</width>
+		<height>222</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Urticaria</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>85</xmin>
+			<ymin>4</ymin>
+			<xmax>237</xmax>
+			<ymax>176</ymax>
+		</bndbox>
+	</object>
+</annotation>

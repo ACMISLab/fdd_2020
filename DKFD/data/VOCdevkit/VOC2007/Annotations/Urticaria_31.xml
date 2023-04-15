@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Urticaria</folder>
+	<filename>Urticaria_31.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\images\Urticaria\Urticaria_31.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>823</width>
+		<height>1024</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Urticaria</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>166</xmin>
+			<ymin>11</ymin>
+			<xmax>614</xmax>
+			<ymax>920</ymax>
+		</bndbox>
+	</object>
+</annotation>

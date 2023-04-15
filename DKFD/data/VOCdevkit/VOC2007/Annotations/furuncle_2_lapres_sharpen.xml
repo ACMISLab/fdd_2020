@@ -1,0 +1,26 @@
+<annotation>
+	<folder>furuncle</folder>
+	<filename>furuncle_2.jpg</filename>
+	<path>C:\Users\ASUS\Desktop\images\furuncle\furuncle_2.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>159</width>
+		<height>120</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>furuncle</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>52</xmin>
+			<ymin>25</ymin>
+			<xmax>119</xmax>
+			<ymax>88</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>222</folder>
+	<filename>Diaper_dermatitis_1_BSRGAN_USM_sharpen_rotate6.jpg</filename>
+	<path>C:\Users\fdd2013326601001\Desktop\222\Diaper_dermatitis_1_BSRGAN_USM_sharpen_rotate6.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>532</width>
+		<height>480</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Diaper dermatitis</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>71</xmin>
+			<ymin>12</ymin>
+			<xmax>490</xmax>
+			<ymax>392</ymax>
+		</bndbox>
+	</object>
+</annotation>

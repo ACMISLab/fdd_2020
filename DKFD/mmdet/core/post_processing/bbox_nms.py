@@ -1,9 +1,41 @@
 # Copyright (c) OpenMMLab. All rights reserved.
 import torch
 import numpy as np
+import copy
 from mmcv.ops.nms import batched_nms
 
 from mmdet.core.bbox.iou_calculators import bbox_overlaps
+
+
+def euclidean_dist(x, y):  # 计算两个矩阵的距离
+    m, n = x.size(0), y.size(0)
+    xx = torch.pow(x, 2).sum(1, keepdim=True).expand(m, n)
+    yy = torch.pow(y, 2).sum(1, keepdim=True).expand(n, m).t()
+    dist = xx + yy
+    dist.addmm_(1, -2, x, y.t())
+    dist = dist.clamp(min=1e-12).sqrt()  # for numerical stability
+    return dist
+
+
+def center_pointer(x):  # 计算检测框中心点
+    inputx_knn = copy.deepcopy(x[:, :2])
+    inputx_knn[:, 0] = (x[:, 2] + x[:, 0]) / 2
+    inputx_knn[:, 1] = (x[:, 3] + x[:, 1]) / 2
+    # print('-----------------------input_knn-------------------------',input_knn)
+    if len(inputx_knn) > 1:
+        xmin = torch.min(inputx_knn[:, 0])
+        xmax = torch.max(inputx_knn[:, 0])
+        ymin = torch.min(inputx_knn[:, 1])
+        ymax = torch.max(inputx_knn[:, 1])
+        # print(xmin,xmax,ymin,ymax)
+        inputx_knn[:, 0] = (inputx_knn[:, 0] - xmin) / (xmax - xmin)
+        inputx_knn[:, 1] = (inputx_knn[:, 1] - ymin) / (ymax - ymin)
+    # inputx_knn[:, 2] = 1 - x[:, 4]
+    # inputx_knn[:,3] = labels[keep]
+    # print('-----------------------dets-------------------------',dets)
+    # print('-----------------------input_knn-------------------------',inputx_knn)
+    # print('-----------------------inputx_knn-------------------------', inputx_knn[:, 0:2])
+    return inputx_knn[:, 0:2]
 
 
 def overlap_area(box: torch.Tensor, boxes: torch.Tensor):
@@ -32,6 +64,19 @@ def overlap_area(box: torch.Tensor, boxes: torch.Tensor):
     # print('面积', area_boxes)
 
     return inter / area_boxes
+
+
+def knn_sort(dist, labels, k):
+    # argsort函数将tensor数组中的元素进行从小到大排序，返回相应序列元素的数组下标
+    if len(dist) >= k:
+        idxs = dist.argsort()[:k]
+    else:
+        idxs = dist.argsort()[:len(dist)]
+    # print('------------------------idxs---------------', idxs)
+    labels_knn = labels[idxs]
+    labels_knn_maxnum = torch.bincount(labels_knn).argmax()
+    # print('---------labels_knn_maxnum----------', labels_knn_maxnum)
+    return labels_knn_maxnum
 
 def multiclass_nms(multi_bboxes,
                    multi_scores,
@@ -131,9 +176,9 @@ def multiclass_nms(multi_bboxes,
             while j < dim0:  # 未被定义为存在包含关系或非包含关系的预选框
                 if 0.95 < overlap_area_ration[j] < 1.00:
                     if labels[keep[i]] != labels[keep[j]] and org_score - dets[j][
-                        4] >= 0.10:  # 标签不同的两个建议框,且两个建议框的得分差值大于10%
+                        4] >= 0.30:  # 标签不同的两个建议框,且两个建议框的得分差值大于10%
                         num = num + 1
-                        labels[keep[j]] = labels[keep[i]]  # 修改标签
+                        # labels[keep[j]] = labels[keep[i]]  # 修改标签
                         flitercross_index[j] = False
                         j = j + 1
                     else:
@@ -161,41 +206,44 @@ def multiclass_nms(multi_bboxes,
                         dets[j][3]) or (
                             org_x1 >= dets[j][0] and org_y1 >= dets[j][1] and org_x2 <= dets[j][2] and org_y2 <=
                             dets[j][3]):  # 存在包含关系或被包含关系
-                        labels[keep[j]] = labels[keep[i]]  # 修改标签
+                        # labels[keep[j]] = labels[keep[i]]  # 修改标签
                         # dets[j][4] = org_score
                         flitercontain_index[j] = False
                         j = j + 1
-                        num = num + 1
+                        # num = num + 1
                     else:
                         j = j + 1
                 else:
                     j = j + 1
         else:
             continue
-    print(num)
+    # print(num)
     fliter_inds = torch.from_numpy(np.array(flitercontain_index)).nonzero(as_tuple=False).squeeze(1)
     dets, keep = dets[fliter_inds], keep[fliter_inds]
 
 
     y = copy.deepcopy(labels[keep])
     # 如果存在多种标签,且同时包含置信度高的框和置信度低的检测框
-    if torch.min(y) != torch.max(y) and dets[0][4] > 0.80 and dets[-1][4] < 0.10:  # 如果存在多种标签,且同时包含置信度高的框和置信度低的检测框
+    if torch.min(y) != torch.max(y) and dets[0][4] > 0.80 and dets[-1][4] < 0.30:  # 如果存在多种标签,且同时包含置信度高的框和置信度低的检测框
         label_maxscore = y[0]  # 总体最高得分标签
+        # print('-----label_maxscore--------', label_maxscore)
         label_count = torch.bincount(y)  # 每个标签出现的次数
         label_count_sum = torch.sum(label_count)
         print('---------------label_count,label_count_sum-----------------', label_count, label_count_sum)
         label_maxnum = label_count.argmax()  # 次数最多的标签的下标
         label_numsort = label_count.argsort()  # 标签按出现次数排序，输出下标
-        if label_count[label_numsort[-1]] + label_count[label_numsort[-2]] == label_count_sum:
-            print('只有两种标签')
-
+        # print('-----label_numsort--------', label_numsort)
+        # print('-----label_minnum+label_maxnum--------', label_count[label_numsort[-1]] + label_count[label_numsort[-2]])
+        # if label_count[label_numsort[-1]] + label_count[label_numsort[-2]] == label_count_sum:
+        #     print('只有两种标签')
+        # # print('-----label_maxnum--------', label_maxnum)
         label_maxnum_index = copy.deepcopy(label_count)  # 记录与次数最多的标签出现相同次数的标签
         label_maxnum_count = 0
         for i in range(len(label_count)):
             if label_count[i] == label_count[label_maxnum]:
                 label_maxnum_index[label_maxnum_count] = i  # 具有相同次数的标签
                 label_maxnum_count = label_maxnum_count + 1
-
+        # print(label_maxnum_count)
         flag = 0
         if label_maxnum_count != 1:  # 出现次数最多的标签不是唯一的
             for label in y:
@@ -205,10 +253,17 @@ def multiclass_nms(multi_bboxes,
                         label_maxnum = label_index
                         flag = 1
                         break
+                # print('----------------flag--------------------',flag)
                 if flag == 1:
                     break
+        # print(
+        #     '-----------label_count[label_maxnum], label_count_sum,label_count[label_maxnum].float('
+        #     ')/label_count_sum.float()-----------------',
+        #     label_count[label_maxnum], label_count_sum, label_count[label_maxnum].float() / label_count_sum.float())
         label_maxnum_ration = label_count[label_maxnum].float() / label_count_sum.float()
         if label_maxnum == label_maxscore and label_maxnum_ration >= 0.50:
+            # print('----------labels[keep]--------------------', y)
+            # print('1111111111111111111111111111111')
             # 划分数据集
             dataset = copy.deepcopy(dets)
             train_index = 0
@@ -217,20 +272,31 @@ def multiclass_nms(multi_bboxes,
                 if dets[i][4] > 0.80:
                     train_index = train_index + 1
                     test_index = test_index + 1
-                elif dets[i][4] > 0.10:
+                elif dets[i][4] > 0.30:
                     test_index = test_index + 1
                 else:
                     break
+            # print('------dataset------', dataset)
+            # print(train_index, test_index)
             train_data = dataset[:train_index, :]
             test_data = dataset[test_index:, :]
+            # print('-----train_data-----', train_data)
+            # print('-----test_data-----', test_data)
             train_x = center_pointer(train_data)
             test_x = center_pointer(test_data)
+            # test_x[:, 2] = test_data[:, 4]
+            # print('-----train_x-----', train_x)  # 对应标签y[:train_index]
+            # print('-----test_x-----', test_x)  # 对应标签y[test_index:]
             dist_matrix = euclidean_dist(test_x, train_x)
+            # print('-------------------------dist_matrix-----------------------------------------', dist_matrix)
             for i in range(len(test_x)):
                 test_y = knn_sort(dist_matrix[i], y[:len(train_x)], 5)
                 if y[test_index + i] != test_y:
+                    # print('----------y[test_index + i],test_y----------', y[test_index + i],
+                    #       test_y)
                     y[test_index + i] = test_y
             labels[keep] = y
+            # print('----------labels[keep]_knn--------------------', labels[keep])
     
     if max_num > 0:
         dets = dets[:max_num]

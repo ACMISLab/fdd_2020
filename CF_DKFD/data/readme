@@ -1,0 +1,1 @@
+Please download the relevant dataset in the link https://github.com/ACMISLab/fdd_2020/tree/main/CPD-10, and put it according to the data path of configs/_base_/datasets/voc0712_aug_SR.py

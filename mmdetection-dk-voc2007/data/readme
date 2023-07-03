@@ -1,0 +1,14 @@
+Please download the relevant dataset in the link http://host.robots.ox.ac.uk/pascal/VOC/voc2007/index.html, and put it according to the data path of configs\_base_\datasets\voc0712.py 
+
+OR
+1、下载VOC2007数据集压缩包
+# 训练验证集
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
+# 测试集
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
+# 开发工具包代码和文档
+wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCdevkit_08-Jun-2007.tar
+2、解压
+tar xvf VOCtrainval_06-Nov-2007.tar
+tar xvf VOCtest_06-Nov-2007.tar
+tar xvf VOCdevkit_08-Jun-2007.tar
